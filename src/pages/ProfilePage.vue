@@ -14,6 +14,12 @@
                 </div>
             </div>
         </section>
+        <section class="row justify-content-center p-4">
+            <div class="col-10 my-4 border border-dark p-3 elevation-4" v-for="b in blogs" :key="b.id">
+                <BlogCard :blog="b" />
+
+            </div>
+        </section>
     </div>
 </template>
 

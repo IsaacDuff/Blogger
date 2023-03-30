@@ -21,6 +21,12 @@ class BlogsService {
         logger.log('got all blogs by id', AppState.blogs)
     }
 
+    setActive(blogId) {
+        const blog = AppState.blogs.find(b => b.id == blogId)
+        AppState.activeBlog = blog
+        logger.log('made an active', AppState.activeBlog)
+    }
+
 }
 
 export const blogsService = new BlogsService()
