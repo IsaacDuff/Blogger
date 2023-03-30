@@ -2,9 +2,11 @@
     <div class="row">
         <div class="col-8">
             <div class="d-flex p-2 align-items-center">
-                <img class="img-fluid creatorImg"
-                    src="https://imgv3.fotor.com/images/blog-cover-image/10-profile-picture-ideas-to-make-you-stand-out.jpg"
-                    alt="lame profile pic">
+                <router-link :to="{ name: 'Profile', params: { profileId: blog.creator.id } }">
+                    <img class="img-fluid creatorImg"
+                        src="https://imgv3.fotor.com/images/blog-cover-image/10-profile-picture-ideas-to-make-you-stand-out.jpg"
+                        alt="lame profile pic">
+                </router-link>
                 <h6 class="ps-3">Creator Name</h6>
             </div>
             <div>

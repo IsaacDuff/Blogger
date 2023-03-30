@@ -14,6 +14,13 @@ class BlogsService {
         logger.log('[Mapped Blogs]', AppState.blogs)
     }
 
+    async getBlogsById(query) {
+        const res = await api.get('api/blogs', { params: query })
+        // logger.log('[get blogs by id]', res.data)
+        AppState.blogs = res.data.map(b => new Blog(b))
+        logger.log('got all blogs by id', AppState.blogs)
+    }
+
 }
 
 export const blogsService = new BlogsService()
